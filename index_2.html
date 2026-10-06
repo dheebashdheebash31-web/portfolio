@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dheebash V N | Frontend &amp; Full Stack Developer</title>
+<meta name="description" content="Portfolio of Dheebash V N, frontend and full stack developer (HTML, CSS, JavaScript, Python, Django).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { fontFamily: { sans: ['Sora','system-ui','sans-serif'], mono: ['JetBrains Mono','monospace'] } } } }
+</script>
+<style>
+  body{background:#07070f;color:#e8e8f5;overflow-x:hidden}
+  ::selection{background:#7c5cff;color:#fff}
+  :focus-visible{outline:2px solid #22d3ee;outline-offset:3px}
+  .grad{background:linear-gradient(100deg,#22d3ee,#7c5cff 45%,#ff5cb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  /* aurora background */
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.45;animation:drift 22s ease-in-out infinite alternate}
+  .b1{width:46vw;height:46vw;background:#7c5cff;top:-12vw;left:-10vw}
+  .b2{width:38vw;height:38vw;background:#0ea5c6;top:30vh;right:-12vw;animation-delay:-8s}
+  .b3{width:34vw;height:34vw;background:#d6338f;bottom:-14vw;left:25vw;animation-delay:-14s}
+  @keyframes drift{to{transform:translate(6vw,5vh) scale(1.15)}}
+  .grid-bg{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:30px 30px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%)}
+  /* spotlight cards */
+  .spot{position:relative;overflow:hidden;transition:transform .2s ease-out, border-color .3s}
+  .spot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(380px circle at var(--x,50%) var(--y,50%),rgba(124,92,255,.28),transparent 60%)}
+  .spot:hover{border-color:rgba(124,92,255,.7)}
+  .spot:hover::before{opacity:1}
+  /* marquee */
+  .marquee{display:flex;width:max-content;animation:scroll 32s linear infinite}
+  .marquee:hover{animation-play-state:paused}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .cursor::after{content:"";display:inline-block;width:3px;height:1em;background:#22d3ee;margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .float{animation:float 6s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-14px)}}
+  #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#22d3ee,#7c5cff,#ff5cb8);z-index:60}
+  .tok-k{color:#ff7ab8}.tok-s{color:#7ee0a5}.tok-f{color:#7cc4ff}.tok-c{color:#7d7f9c}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body class="font-sans antialiased">
+<div id="bar"></div>
+<div class="aurora" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid-bg"></div></div>
+
+<!-- NAV -->
+<header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
+  <nav class="glass rounded-full px-3 py-2 flex items-center gap-1 text-sm" aria-label="Main">
+    <a href="#home" class="px-3 py-1.5 font-extrabold grad">DVN</a>
+    <a href="#about" class="px-3 py-1.5 rounded-full hover:bg-white/10 hidden sm:block">About</a>
+    <a href="#skills" class="px-3 py-1.5 rounded-full hover:bg-white/10 hidden sm:block">Skills</a>
+    <a href="#projects" class="px-3 py-1.5 rounded-full hover:bg-white/10">Projects</a>
+    <a href="#journey" class="px-3 py-1.5 rounded-full hover:bg-white/10 hidden sm:block">Journey</a>
+    <a href="#contact" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-black font-semibold">Hire me</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-28 pb-16">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center w-full">
+    <div>
+      <span class="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm text-cyan-300 hero-in">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open to frontend &amp; full stack roles
+      </span>
+      <h1 class="mt-6 text-5xl sm:text-7xl font-extrabold leading-[1.02] tracking-tight hero-in">
+        Hi, I'm <span class="grad">Dheebash</span>
+      </h1>
+      <p class="mt-4 text-2xl sm:text-3xl font-semibold text-white/80 hero-in">
+        I build <span id="typed" class="cursor text-cyan-300"></span>
+      </p>
+      <p class="mt-6 max-w-lg text-lg text-white/60 leading-relaxed hero-in">
+        Electrical engineering graduate turned web developer. I make fast, responsive interfaces and connect them to Python and Django backends.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3 hero-in">
+        <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-violet-500 to-pink-500 font-semibold text-black hover:scale-105 transition">View my work</a>
+        <a href="Dheebash_VN_Resume.pdf" download class="glass px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">Download resume</a>
+      </div>
+    </div>
+
+    <!-- floating code window -->
+    <div class="float hero-in" aria-hidden="true">
+      <div class="glass rounded-2xl overflow-hidden shadow-2xl shadow-violet-900/40">
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+          <span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span>
+          <span class="ml-3 text-xs text-white/40 font-mono">views.py</span>
+        </div>
+<pre class="p-5 text-[13px] sm:text-sm font-mono leading-relaxed overflow-x-auto"><span class="tok-c"># from circuits to code</span>
+<span class="tok-k">class</span> <span class="tok-f">Developer</span>(Engineer):
+    name  = <span class="tok-s">"Dheebash V N"</span>
+    stack = [<span class="tok-s">"Python"</span>, <span class="tok-s">"Django"</span>,
+             <span class="tok-s">"JavaScript"</span>, <span class="tok-s">"MySQL"</span>]
+    base  = <span class="tok-s">"Coimbatore"</span>
+
+    <span class="tok-k">def</span> <span class="tok-f">build</span>(self, idea):
+        <span class="tok-k">return</span> <span class="tok-f">ship</span>(idea, responsive=<span class="tok-k">True</span>)</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="border-y border-white/10 py-5 overflow-hidden" aria-label="Technologies">
+  <div class="marquee text-xl font-semibold text-white/40">
+    <script>
+      (function(){var t=['HTML','CSS','Bootstrap','JavaScript','jQuery','Python','Django','REST API','PHP','MySQL','C++','Arduino','IoT'],h='';
+      for(var i=0;i<2;i++)t.forEach(function(x){h+='<span class="px-8 whitespace-nowrap">'+x+' <span class="text-violet-400">&#10022;</span></span>'});
+      document.currentScript.insertAdjacentHTML('afterend',h)})();
+    </script>
+  </div>
+</div>
+
+<!-- ABOUT (bento) -->
+<section id="about" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="reveal text-4xl sm:text-5xl font-extrabold">About <span class="grad">me</span></h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="reveal spot glass rounded-3xl p-8 md:col-span-2">
+        <h3 class="text-xl font-semibold">Engineer first, developer by choice</h3>
+        <p class="mt-3 text-white/60 leading-relaxed">I studied Electrical and Electronics Engineering at Anna University Regional Campus, Coimbatore, then moved into web development through a Full Stack program (HTML, CSS, JavaScript, jQuery, MySQL, PHP) and a Python Full Stack course (Python, Django). I learn fast and like turning ideas into working products.</p>
+      </div>
+      <div class="reveal spot glass rounded-3xl p-8">
+        <p class="text-6xl font-extrabold grad">3</p>
+        <p class="mt-2 text-white/60">internships and training programs completed</p>
+      </div>
+      <div class="reveal spot glass rounded-3xl p-8">
+        <p class="text-6xl font-extrabold grad">2</p>
+        <p class="mt-2 text-white/60">full stack courses: PHP/MySQL and Python/Django</p>
+      </div>
+      <div class="reveal spot glass rounded-3xl p-8 md:col-span-2">
+        <h3 class="text-xl font-semibold">What I'm looking for</h3>
+        <p class="mt-3 text-white/60 leading-relaxed">A first role as a frontend or full stack developer in Coimbatore, Chennai or remote, on a team where I can build real features and keep learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="reveal text-4xl sm:text-5xl font-extrabold">Tech <span class="grad">stack</span></h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="reveal spot glass rounded-3xl p-8">
+        <h3 class="text-xl font-semibold text-cyan-300">Frontend</h3>
+        <div class="mt-5 flex flex-wrap gap-2 text-sm">
+          <span class="glass rounded-full px-3 py-1">HTML</span><span class="glass rounded-full px-3 py-1">CSS</span><span class="glass rounded-full px-3 py-1">Bootstrap</span><span class="glass rounded-full px-3 py-1">JavaScript</span><span class="glass rounded-full px-3 py-1">jQuery</span><span class="glass rounded-full px-3 py-1">DOM</span><span class="glass rounded-full px-3 py-1">Responsive design</span>
+        </div>
+      </div>
+      <div class="reveal spot glass rounded-3xl p-8">
+        <h3 class="text-xl font-semibold text-violet-300">Backend</h3>
+        <div class="mt-5 flex flex-wrap gap-2 text-sm">
+          <span class="glass rounded-full px-3 py-1">Python</span><span class="glass rounded-full px-3 py-1">Django</span><span class="glass rounded-full px-3 py-1">REST API</span><span class="glass rounded-full px-3 py-1">PHP</span><span class="glass rounded-full px-3 py-1">MySQL</span>
+        </div>
+      </div>
+      <div class="reveal spot glass rounded-3xl p-8">
+        <h3 class="text-xl font-semibold text-pink-300">Electronics</h3>
+        <div class="mt-5 flex flex-wrap gap-2 text-sm">
+          <span class="glass rounded-full px-3 py-1">Arduino</span><span class="glass rounded-full px-3 py-1">Embedded systems</span><span class="glass rounded-full px-3 py-1">IoT</span><span class="glass rounded-full px-3 py-1">C and C++</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="reveal text-4xl sm:text-5xl font-extrabold">Selected <span class="grad">projects</span></h2>
+    <div class="mt-10 grid md:grid-cols-2 gap-6" id="projGrid">
+      <article class="reveal tilt spot glass rounded-3xl p-8 flex flex-col">
+        <div class="h-36 rounded-2xl mb-6 bg-gradient-to-br from-violet-500/40 to-cyan-400/30 flex items-center justify-center text-5xl" aria-hidden="true">🛒</div>
+        <h3 class="text-2xl font-semibold">Ecommerce Website</h3>
+        <p class="mt-2 text-white/60 flex-1">A responsive online store with a PHP and MySQL backend for products and data.</p>
+        <p class="mt-4 text-sm font-mono text-cyan-300">HTML, Bootstrap, JavaScript, PHP, MySQL</p>
+        <div class="mt-5 flex gap-3 text-sm"><a href="#" class="px-4 py-2 rounded-lg bg-white text-black font-semibold">Live demo</a><a href="#" class="px-4 py-2 rounded-lg glass">Source code</a></div>
+      </article>
+      <article class="reveal tilt spot glass rounded-3xl p-8 flex flex-col">
+        <div class="h-36 rounded-2xl mb-6 bg-gradient-to-br from-pink-500/40 to-violet-500/30 flex items-center justify-center text-5xl" aria-hidden="true">💼</div>
+        <h3 class="text-2xl font-semibold">Business Responsive Websites</h3>
+        <p class="mt-2 text-white/60 flex-1">Multi-page business sites that adapt cleanly from phone to desktop.</p>
+        <p class="mt-4 text-sm font-mono text-cyan-300">HTML, CSS, Bootstrap</p>
+        <div class="mt-5 flex gap-3 text-sm"><a href="#" class="px-4 py-2 rounded-lg bg-white text-black font-semibold">Live demo</a><a href="#" class="px-4 py-2 rounded-lg glass">Source code</a></div>
+      </article>
+      <article class="reveal tilt spot glass rounded-3xl p-8 flex flex-col">
+        <div class="h-36 rounded-2xl mb-6 bg-gradient-to-br from-cyan-400/40 to-emerald-400/30 flex items-center justify-center text-5xl" aria-hidden="true">🧩</div>
+        <h3 class="text-2xl font-semibold">Static Clone Websites</h3>
+        <p class="mt-2 text-white/60 flex-1">Popular site layouts rebuilt from scratch to practise spacing, structure and responsive behaviour.</p>
+        <p class="mt-4 text-sm font-mono text-cyan-300">HTML, CSS, Bootstrap</p>
+        <div class="mt-5 flex gap-3 text-sm"><a href="#" class="px-4 py-2 rounded-lg bg-white text-black font-semibold">Live demo</a><a href="#" class="px-4 py-2 rounded-lg glass">Source code</a></div>
+      </article>
+      <article class="reveal tilt spot glass rounded-3xl p-8 flex flex-col">
+        <div class="h-36 rounded-2xl mb-6 bg-gradient-to-br from-amber-400/40 to-pink-500/30 flex items-center justify-center text-5xl" aria-hidden="true">🚀</div>
+        <h3 class="text-2xl font-semibold">Portfolio Website</h3>
+        <p class="mt-2 text-white/60 flex-1">The site you're on: built to show my work, skills and journey.</p>
+        <p class="mt-4 text-sm font-mono text-cyan-300">HTML, CSS, JavaScript, Tailwind</p>
+        <div class="mt-5 flex gap-3 text-sm"><a href="#" class="px-4 py-2 rounded-lg glass">Source code</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" class="py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="reveal text-4xl sm:text-5xl font-extrabold">My <span class="grad">journey</span></h2>
+    <ol class="mt-12 relative border-l border-white/15 ml-3 space-y-10">
+      <li class="reveal pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-cyan-400/20"></span>
+        <p class="text-sm text-cyan-300 font-mono">May 2026 to Aug 2026</p><h3 class="text-xl font-semibold">Python Full Stack Developer Course</h3><p class="text-white/60">SLA Institute, Chennai. Python and Django.</p></li>
+      <li class="reveal pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-violet-400 ring-4 ring-violet-400/20"></span>
+        <p class="text-sm text-cyan-300 font-mono">Jan 2025 to Apr 2025</p><h3 class="text-xl font-semibold">Full Stack Development Trainee</h3><p class="text-white/60">MIST Solutions, Coimbatore. Built projects with HTML, CSS, Bootstrap, JavaScript and jQuery; worked with MySQL and PHP.</p></li>
+      <li class="reveal pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pink-400 ring-4 ring-pink-400/20"></span>
+        <p class="text-sm text-cyan-300 font-mono">Jul 2024 to Aug 2024</p><h3 class="text-xl font-semibold">Intern, Able Electronics and Services</h3><p class="text-white/60">Studied transformer systems, including oil-cooled transformer design and operation.</p></li>
+      <li class="reveal pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-300 ring-4 ring-amber-300/20"></span>
+        <p class="text-sm text-cyan-300 font-mono">Aug 2023 to Sep 2023</p><h3 class="text-xl font-semibold">Intern, EMGLITZ Technologies</h3><p class="text-white/60">Designed a Smart Home Automation project with Arduino IDE; strengthened embedded systems and C skills.</p></li>
+      <li class="reveal pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white ring-4 ring-white/20"></span>
+        <p class="text-sm text-cyan-300 font-mono">2021 to 2025</p><h3 class="text-xl font-semibold">B.E. Electrical and Electronics Engineering</h3><p class="text-white/60">Anna University Regional Campus, Coimbatore. CGPA 7.45. EKHNA Coordinator and Class Representative.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="reveal glass rounded-[2rem] p-8 sm:p-14 text-center relative overflow-hidden">
+      <h2 class="text-4xl sm:text-6xl font-extrabold">Let's build <span class="grad">something</span></h2>
+      <p class="mt-4 text-white/60 max-w-xl mx-auto">I'm available for frontend and full stack developer roles. Send a message and I'll reply soon.</p>
+      <a href="mailto:dheebashdheebash31@gmail.com" class="mt-8 inline-block text-xl sm:text-2xl font-semibold grad break-all">dheebashdheebash31@gmail.com</a>
+      <p class="mt-2 text-white/50">7667088358 &nbsp;|&nbsp; Coimbatore, Tamil Nadu</p>
+      <form id="cf" class="mt-10 grid sm:grid-cols-2 gap-4 text-left" novalidate>
+        <label class="block"><span class="text-sm text-white/60">Name</span><input id="n" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 focus:border-cyan-400 outline-none" required></label>
+        <label class="block"><span class="text-sm text-white/60">Email</span><input id="e" type="email" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 focus:border-cyan-400 outline-none" required></label>
+        <label class="block sm:col-span-2"><span class="text-sm text-white/60">Message</span><textarea id="m" rows="4" class="mt-1 w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 focus:border-cyan-400 outline-none" required></textarea></label>
+        <p id="err" role="alert" class="sm:col-span-2 text-pink-400 text-sm min-h-[1.25rem]"></p>
+        <button class="sm:col-span-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-violet-500 to-pink-500 font-semibold text-black hover:scale-[1.02] transition">Send message</button>
+      </form>
+      <!-- Replace # with your own profile links -->
+      <div class="mt-8 flex justify-center gap-3 text-sm"><a href="#" class="glass px-4 py-2 rounded-full">GitHub</a><a href="#" class="glass px-4 py-2 rounded-full">LinkedIn</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="py-8 text-center text-sm text-white/40">&copy; <span id="yr"></span> Dheebash V N. Designed and built by me.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // typing effect
+  var roles=['responsive websites','Django backends','REST APIs','full stack apps'], ri=0, ci=0, del=false, el=document.getElementById('typed');
+  (function tick(){
+    var w=roles[ri]; el.textContent=w.slice(0,ci);
+    if(reduce){el.textContent=roles[0];return}
+    if(!del&&ci<w.length){ci++;setTimeout(tick,80)}
+    else if(!del){del=true;setTimeout(tick,1500)}
+    else if(ci>0){ci--;setTimeout(tick,40)}
+    else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,250)}
+  })();
+
+  // scroll progress
+  addEventListener('scroll',function(){
+    var h=document.documentElement; document.getElementById('bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  },{passive:true});
+
+  // spotlight + 3D tilt
+  document.querySelectorAll('.spot').forEach(function(c){
+    c.addEventListener('mousemove',function(e){
+      var r=c.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+      c.style.setProperty('--x',x+'px'); c.style.setProperty('--y',y+'px');
+      if(c.classList.contains('tilt')&&!reduce){
+        c.style.transform='perspective(900px) rotateX('+((y/r.height-.5)*-8)+'deg) rotateY('+((x/r.width-.5)*8)+'deg) translateY(-4px)';
+      }
+    });
+    c.addEventListener('mouseleave',function(){c.style.transform=''});
+  });
+
+  // GSAP entrance + scroll reveals
+  if(window.gsap && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.hero-in',{y:40,opacity:0,duration:.9,stagger:.12,ease:'power3.out'});
+    gsap.utils.toArray('.reveal').forEach(function(el){
+      gsap.from(el,{y:50,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+  }
+
+  // contact form: validate then open the visitor's mail app
+  document.getElementById('cf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('n').value.trim(), m=document.getElementById('e').value.trim(), t=document.getElementById('m').value.trim(), err=document.getElementById('err');
+    if(!n||!t||!/^\S+@\S+\.\S+$/.test(m)){err.textContent='Enter your name, a valid email and a message.';return}
+    err.textContent='';
+    location.href='mailto:dheebashdheebash31@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(t+'\n\nFrom: '+n+' ('+m+')');
+  });
+</script>
+</body>
+</html>
